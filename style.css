@@ -1,0 +1,63 @@
+/* Default CSS Code */
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-modify: none;
+    -webkit-user-select: none;
+    
+    color: var(--main-txt-color);
+    font-family: "CustonFont",sans-serif,serif,monospace;
+    font-weight: bold;
+  }
+  
+  @font-face{
+    font-family: "CustonFont";
+    src: url("./0.ttf");
+  }
+  
+/* Varibels */
+  :root{
+    --main-txt-c: #fff;
+    --main-blur-c: #00000011;
+    --main-blur: 0px;
+  }
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Main CSS */
+  html,body{
+    width: 100vw;
+    min-height: 100vh;
+    color: var(--main-txt-c);
+    z-index: 1;
+    font-size: 111%;
+    display: grid;
+    place-items: center;
+  }
+  
+  body::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -2;
+    background: url("1.jpeg") center fixed no-repeat;
+    background-size: cover;
+  }
+  
+  body::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    backdrop-filter: blur(var(--main-blur));
+    background: var(--main-blur-c);
+  }
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+  #timer{
+    display: grid;
+    place-items: center;
+    font-size: 36px;
+  }

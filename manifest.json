@@ -1,0 +1,27 @@
+  {
+    "name": "KRUSHNA",
+    "short_name": "BIRTHDAY TIMER",
+    "id": "V1",
+    "display": "fullscreen",
+    "orientation": "any",
+    "background_color": "#000",
+    "theme_color": "#000",
+    "categories": ["Website","Test","PWA"],
+    "description": "Nothing",
+    "start_url": "/BIRTHDAY-TIMER/",
+    "scope": "./",
+    "icons": [{
+      "src": "0.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
+    "shortcuts": [{
+      "name": "HOME",
+      "url": "/BIRTHDAY-TIMER/index.html",
+      "icons": [{
+        "src": "0.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      }]
+    }]
+  }

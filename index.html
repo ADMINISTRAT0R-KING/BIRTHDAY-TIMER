@@ -1,0 +1,65 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <!-- BROWSER CONFIG -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=off,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="HandheldFriendly" content="true"/>
+    
+  <!-- BROWSER THEME & ICON-->
+    <meta name="theme-color" content="#000">
+    <link rel="shortcut icon" sizes="256x256" type="image/x-icon" href="0.png">
+    
+  <!-- FILE CONFIG -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preload" href="1.jpeg" as="image">
+    
+  </head>
+  <script type="text/javascript" defer>
+    fetch('./sw.js');
+    document.addEventListener("DOMContentLoaded",()=>{
+      if(navigator.serviceWorker != null){
+        navigator.serviceWorker.register("sw.js").then((reg)=>{
+          reg.onupdatefound=()=>{
+            reg.update().then(()=>{
+             confirm("\nSERVICE-WORKER UPDATED SUCCESSFULLY ◉‿◉")
+            });
+          }
+        }).catch((err)=>{
+          alert("\nSERVICE-WORKER UPDATE ERROR:- "+err)
+        });
+      }else{
+        confirm("\nBROWSR DO NOT SUPPORT SERVICE-WORKER!");
+      }
+    })
+  </script>
+  <body>
+  <!-- MAIN BODY -->
+    
+    <div id="timer">23/10/2009</div>
+    
+  </body>
+  <script>
+    const BirthDate = new Date("oct 22, 2024 24:00:00").getTime();
+    
+    setInterval(()=>{
+      var Today = new Date().getTime();
+      
+      var RemainTime = BirthDate - Today;
+      
+      var days = Math.floor(RemainTime / (1000 * 60 * 60 * 24)),
+      hours = Math.floor((RemainTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      minutes = Math.floor((RemainTime % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds = Math.floor((RemainTime % (1000 * 60)) / 1000);
+      
+      timer.innerHTML=days+"D,"+hours+"H "+minutes+"M,"+seconds+"S";
+      
+    },1000)
+    
+    
+  </script>
+  </html>
